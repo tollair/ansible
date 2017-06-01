@@ -24,3 +24,4 @@
 
     - debug: var=out.stdout_lines 
     
+more output.txt | grep -e '-' -e 'Route' -e 'Total'
