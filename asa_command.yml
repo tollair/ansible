@@ -7,10 +7,10 @@
   vars:
     cli:
       host: "{{ inventory_hostname }}"
-      username: adrian.tolley
-      password: Drexler1
+      username: username
+      password: password
       authorize: yes
-      auth_pass: Drexler1
+      auth_pass: password
       transport: cli
 
   tasks:
