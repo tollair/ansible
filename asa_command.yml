@@ -1,0 +1,26 @@
+---
+
+- hosts: melb-asa
+  connection: local
+  gather_facts: false
+
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: adrian.tolley
+      password: Drexler1
+      authorize: yes
+      auth_pass: Drexler1
+      transport: cli
+
+  tasks:
+    - name: show version
+      asa_command:
+        commands:
+          - show hostname
+          - show route summary | i Total|Route
+        provider: "{{ cli }}" 
+      register: out     
+
+    - debug: var=out.stdout_lines 
+    
